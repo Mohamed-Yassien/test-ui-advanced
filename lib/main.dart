@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_ui/second_screen.dart';
+import 'package:test_ui/animation_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true),
       themeMode: ThemeMode.dark,
-      home: const SecondScreen(),
+      home: const AnimationScreen(),
     );
   }
 }
