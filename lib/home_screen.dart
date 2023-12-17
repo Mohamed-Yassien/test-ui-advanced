@@ -8,15 +8,27 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen>
+    with SingleTickerProviderStateMixin {
   int numberOfDays = 0;
   int currentIndex = 0;
+
+  double progressValue = 1;
+  // late Animation<double> animation;
+  // late AnimationController controller;
 
   DateTime? selectedDate;
 
   @override
   void initState() {
     super.initState();
+    // controller =
+    //     AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    // animation = Tween<double>(begin: 0, end: 1).animate(controller)
+    //   ..addListener(() {
+    //     setState(() {});
+    //   });
+    // controller.forward();
     var res = getDaysInMonth(DateTime.now().year, DateTime.now().month);
     debugPrint("res is $res");
   }
@@ -123,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-        ],
+  ],
       ),
     );
   }
