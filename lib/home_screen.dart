@@ -44,6 +44,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   changeCurrentIndex({required int index}) {
     currentIndex = index;
+    debugPrint(
+        "this date is ${DateTime(DateTime.now().year, DateTime.now().month, currentIndex + 1)}");
     setState(() {});
   }
 
@@ -70,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 60,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: currentIndex == index ? Colors.amber : Colors.white,
+                    color: currentIndex == index ? Colors.teal : Colors.white,
                     border: Border.all(
                       color: currentIndex == index
                           ? Colors.grey.withOpacity(.4)
@@ -79,6 +81,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   child: Text(
                     "${index + 1}",
+                    style: TextStyle(
+                      color:
+                          currentIndex == index ? Colors.white : Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               );
