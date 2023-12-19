@@ -1,8 +1,27 @@
+import 'package:country_picker/country_picker.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:test_ui/select_county_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    EasyLocalization(
+      supportedLocales: const [
+        Locale('en', 'US'),
+        Locale('ar', 'EG'),
+        Locale.fromSubtags(
+          languageCode: 'en',
+        ),
+        Locale.fromSubtags(
+          languageCode: 'ar',
+        ),
+      ],
+      path: 'assets/translations',
+      fallbackLocale: const Locale('ar', 'EG'),
+      startLocale: const Locale('ar', 'EG'),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -11,6 +30,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      supportedLocales: const [
+        Locale('en', 'US'),
+        Locale('ar', 'EG'),
+        Locale.fromSubtags(
+          languageCode: 'en',
+        ),
+        Locale.fromSubtags(
+          languageCode: 'ar',
+        ),
+      ],
+      // localizationsDelegates: [
+      //   CountryLocalizations.delegate,
+      //   context.localizationDelegates.first,
+      //   context.localizationDelegates[1],
+      // ],
+      localizationsDelegates: context.localizationDelegates +
+          [
+            CountryLocalizations.delegate,
+          ],
+      locale: context.locale,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true),
       themeMode: ThemeMode.dark,

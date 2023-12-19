@@ -29,32 +29,25 @@ class _SelectCountryScreenState extends State<SelectCountryScreen> {
               onTap: () {
                 showCountryPicker(
                     context: context,
-                    countryListTheme: CountryListThemeData(
-                    
-                      margin: const EdgeInsets.all(20),
-
+                    countryListTheme: const CountryListThemeData(
+                      // margin: const EdgeInsets.all(20),
                       flagSize: 25,
                       backgroundColor: Colors.white,
                       textStyle:
-                          const TextStyle(fontSize: 16, color: Colors.blueGrey),
+                          TextStyle(fontSize: 16, color: Colors.blueGrey),
                       bottomSheetHeight:
                           500, // Optional. Country list modal height
-                      //Optional. Sets the border radius for the bottomsheet.
-                      borderRadius: const BorderRadius.only(
+                      borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20.0),
                         topRight: Radius.circular(20.0),
                       ),
                       //Optional. Styles the search field.
                       inputDecoration: InputDecoration(
                         labelText: 'Search',
-                        hintText: 'Start typing to search',
-                        contentPadding: const EdgeInsets.all(5),
-                        prefixIcon: const Icon(Icons.search),
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: const Color(0xFF8C98A8).withOpacity(0.2),
-                          ),
-                        ),
+                        // hintText: 'Start typing to search',
+                        contentPadding: EdgeInsets.all(5),
+                        //prefixIcon: Icon(Icons.search),
+                        border: UnderlineInputBorder(),
                       ),
                     ),
                     onSelect: (Country country) {
@@ -70,7 +63,7 @@ class _SelectCountryScreenState extends State<SelectCountryScreen> {
                   vertical: 10,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.grey.withOpacity(.5),
+                  color: Colors.grey.withOpacity(.3),
                   borderRadius: BorderRadius.circular(5),
                 ),
                 child: Row(
@@ -80,7 +73,7 @@ class _SelectCountryScreenState extends State<SelectCountryScreen> {
                             'select country',
                           )
                         : Text(
-                            selectedCountry?.name ?? '',
+                            selectedCountry?.nameLocalized ?? '',
                           ),
                     const Spacer(),
                     const Icon(
