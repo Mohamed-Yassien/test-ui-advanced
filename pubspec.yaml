@@ -40,6 +40,9 @@ dependencies:
   syncfusion_flutter_gauges:
   country_picker: ^2.0.23
   easy_localization: ^3.0.1
+  audio_waveforms: ^0.1.4 
+  flutter_svg: ^1.1.6
+  path_provider:
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +69,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     -  assets/translations/
+    -  assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

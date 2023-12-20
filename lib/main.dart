@@ -40,11 +40,6 @@ class MyApp extends StatelessWidget {
           languageCode: 'ar',
         ),
       ],
-      // localizationsDelegates: [
-      //   CountryLocalizations.delegate,
-      //   context.localizationDelegates.first,
-      //   context.localizationDelegates[1],
-      // ],
       localizationsDelegates: context.localizationDelegates +
           [
             CountryLocalizations.delegate,
