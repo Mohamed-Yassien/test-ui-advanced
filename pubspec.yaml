@@ -43,6 +43,7 @@ dependencies:
   audio_waveforms: ^0.1.4 
   flutter_svg: ^1.1.6
   path_provider:
+  flutter_bloc:
 
 dev_dependencies:
   flutter_test:

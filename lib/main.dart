@@ -1,7 +1,7 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:test_ui/select_county_screen.dart';
+import 'package:test_ui/record/screens/record_screen.dart';
 
 void main() {
   runApp(
@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true),
       themeMode: ThemeMode.dark,
-      home: const SelectCountryScreen(),
+      home: const RecordScreen(),
     );
   }
 }
