@@ -36,30 +36,26 @@ class RecordScreen extends StatelessWidget {
                         AnimatedSwitcher(
                           duration: const Duration(milliseconds: 300),
                           child: cubit.isRecording
-                              ? Expanded(
-                                  child: AudioWaveforms(
-                                    size: Size(
-                                      MediaQuery.sizeOf(context).width * .5 +
-                                          40,
-                                      MediaQuery.sizeOf(context).height * .06 -
-                                          15,
-                                    ),
-                                    recorderController:
-                                        cubit.recorderController,
-                                    waveStyle: const WaveStyle(
-                                      waveColor: Colors.white,
-                                      extendWaveform: true,
-                                      showMiddleLine: false,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      color: Colors.teal,
-                                    ),
-                                    padding: const EdgeInsets.all(10),
-                                    margin: const EdgeInsets.symmetric(
-                                      horizontal: 15,
-                                      vertical: 8,
-                                    ),
+                              ? AudioWaveforms(
+                                  size: Size(
+                                    MediaQuery.sizeOf(context).width * .5 + 40,
+                                    MediaQuery.sizeOf(context).height * .06 -
+                                        15,
+                                  ),
+                                  recorderController: cubit.recorderController,
+                                  waveStyle: const WaveStyle(
+                                    waveColor: Colors.white,
+                                    extendWaveform: true,
+                                    showMiddleLine: false,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    color: Colors.teal,
+                                  ),
+                                  padding: const EdgeInsets.all(10),
+                                  margin: const EdgeInsets.symmetric(
+                                    horizontal: 15,
+                                    vertical: 8,
                                   ),
                                 )
                               : const SizedBox(),

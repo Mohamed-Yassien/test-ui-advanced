@@ -25,31 +25,54 @@ class PlayerBubble extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    SizedBox(
-                      width: 30,
-                      child: StreamBuilder<int>(
-                        stream: recordCubit
-                            .playerController.onCurrentDurationChanged,
-                        builder: (context, data) {
-                          return data.hasData
-                              ? FittedBox(
-                                  child: Text(
-                                    recordCubit.timeFormate(
-                                      milliSeconds: data.data!,
-                                    ),
-                                    style: const TextStyle(color: Colors.white),
-                                  ),
-                                )
-                              : FittedBox(
-                                  child: Text(
-                                    recordCubit.timeFormate(
-                                      milliSeconds: 0,
-                                    ),
-                                    style: const TextStyle(color: Colors.white),
-                                  ),
-                                );
-                        },
-                      ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 30,
+                          child: StreamBuilder<int>(
+                            stream: recordCubit
+                                .playerController.onCurrentDurationChanged,
+                            builder: (context, data) {
+                              debugPrint(
+                                  "all size is ${recordCubit.timeFormate(milliSeconds: recordCubit.playerController.maxDuration)}");
+                              return data.hasData
+                                  ? FittedBox(
+                                      child: Text(
+                                        recordCubit.timeFormate(
+                                          milliSeconds: data.data!,
+                                        ),
+                                        style: const TextStyle(
+                                            color: Colors.white),
+                                      ),
+                                    )
+                                  : FittedBox(
+                                      child: Text(
+                                        recordCubit.timeFormate(
+                                          milliSeconds: 0,
+                                        ),
+                                        style: const TextStyle(
+                                            color: Colors.white),
+                                      ),
+                                    );
+                            },
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 2,
+                        ),
+                        SizedBox(
+                            width: 30,
+                            child: FittedBox(
+                              child: Text(
+                                recordCubit.timeFormate(
+                                  milliSeconds:
+                                      recordCubit.playerController.maxDuration,
+                                ),
+                                style: const TextStyle(color: Colors.black),
+                              ),
+                            )),
+                      ],
                     ),
                     StreamBuilder<PlayerState>(
                       stream: recordCubit.playerController.onPlayerStateChanged,
